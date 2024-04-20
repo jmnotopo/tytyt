@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra com PIX</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+        }
+        input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Compra com PIX</h1>
+        <p>Envie o valor para a chave PIX:</p>
+        <p><strong>Chave PIX:</strong> 81999724889</p>
+        <img src="file:///C:/Users/JESUS%20TE%20AMA/Desktop/arte%20loja/arte%20jm.webp" alt="Arte JM">
+        <p>Após o pagamento, entre em contato no Discord:</p>
+        <input type="text" id="discordUsername" placeholder="SeuNick#1234">
+        <a id="discordLink" href="#" target="_blank">Abrir Discord</a>
+    </div>
+
+    <script>
+        // Função para gerar o link do Discord com o nome de usuário preenchido
+        function openDiscord() {
+            var username = document.getElementById("discordUsername").value;
+            var url = "https://discord.com/channels/@me";
+            if (username) {
+                url += "?recipient=" + encodeURIComponent(username);
+            }
+            window.open(url, "_blank");
+        }
+
+        // Adiciona um evento de clique ao link do Discord
+        document.getElementById("discordLink").addEventListener("click", openDiscord);
+    </script>
+</body>
+</html>
